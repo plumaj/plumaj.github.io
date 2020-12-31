@@ -1,1 +1,12 @@
 theme: jekyll-theme-minimal
+
+# Site Settings
+title: Alistair Plum
+description: Welcome to my homepage!
+subtitle: my homepage
+name: Alistair Plum
+url: "https://ajplum.com"
+
+# for later
+#paginate: 5 # amount of posts to show
+#paginate_path: /page:num/
