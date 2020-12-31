@@ -1,5 +1,5 @@
- ---
- layout: single
- title: About Me
- permalink: /projects/
- ---
+---
+layout: single
+title: About Me
+permalink: /projects/
+---
