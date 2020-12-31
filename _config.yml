@@ -39,4 +39,4 @@ include:
     - _pages
 
 plugins:
-    - jekyll-include-cache"
+    - jekyll-include-cache
