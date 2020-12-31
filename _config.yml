@@ -1,6 +1,4 @@
 remote_theme: "mmistakes/minimal-mistakes@4.22.0"
-plugins:
-   - jekyll-include-cache"
 
 # Site Settings
 title: Alistair Plum
@@ -39,3 +37,6 @@ footer:
 
 include:
     - _pages
+
+plugins:
+    - jekyll-include-cache"
