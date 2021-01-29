@@ -1,5 +1,5 @@
 ---
 layout: single
-title: About Me
+title: Projects
 permalink: /projects/
 ---
