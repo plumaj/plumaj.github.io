@@ -16,4 +16,13 @@ social:
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/ajpm/'}
 
 contacts:
-- {name: 'Dr. Academia', title: 'Professor', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/contact.jpg'}
+- {name: 'Dr. Alistair Plum', 
+  title: 'Postdoctoral Researcher',
+  department: 'Department of Humanities', 
+  institution: 'Université du Luxembourg', 
+  institution_address: 'Maison Sciences Humaines, 11 Porte des Sciences, L-4366 Esch', 
+  phone: '(+352) 46 66 44 4746', 
+  email: 'alistair.plum@uni.lu', 
+  office: 'MSH 2.152', 
+  #image: 'assets/img/contact.jpg'
+}
