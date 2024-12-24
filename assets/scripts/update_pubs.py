@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from scholarly import scholarly
 from datetime import datetime
 
@@ -16,25 +15,35 @@ def main():
     for p in author_filled.get('publications', []):
         p_filled = scholarly.fill(p)
         bib = p_filled.get('bib', {})
-        year = str(bib.get('year', '')) or str(bib.get('pub_year', ''))
+        raw_year = bib.get('year') or bib.get('pub_year') or ''
+        try:
+            year_int = int(raw_year)
+        except ValueError:
+            year_int = 0  # fallback if not an integer
         title = bib.get('title', '')
         authors = bib.get('author', '').replace(' and ', ', ')
-        name = f"{title}. {year}. {authors}"
+        name = f"{title}. {raw_year}. {authors}"
         url = bib.get('eprint_url') or p_filled.get('pub_url') or ''
-        pubs.append({'name': name, 'year': year, 'url': url})
+        pubs.append({'name': name, 'year': str(year_int), 'sort_year': year_int, 'url': url})
     
     current_year = str(datetime.now().year)
     featured, index = [], []
     for pub in pubs:
-        entry = {'name': pub['name'], 'url': pub['url']}
-        index.append(entry)
+        entry = {
+            'name': pub['name'],
+            'url': pub['url'],
+            'sort_year': pub['sort_year']  # keep for sorting
+        }
         if pub['year'] == current_year:
-            featured.append(entry)
+            featured.append({'name': pub['name'], 'url': pub['url']})
+        index.append(entry)
+    
+    # Sort the index by 'sort_year' descending
+    index.sort(key=lambda x: x['sort_year'], reverse=True)
     
     with open('../../_data/publications.yml', 'w', encoding='utf-8') as f:
         f.write("featured:\n")
         for p in featured:
-            # Use raw string + string concatenation so \n remains valid
             t = p['name'].replace("'", "\\'")
             u = p['url'].replace("'", "\\'")
             f.write(rf"- {{name: '{t}', url: '{u}'}}" + "\n")
