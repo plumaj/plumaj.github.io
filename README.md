@@ -4,7 +4,7 @@ This is my homepage :)
 
 ## Source
 
-I copied this theme from https://github.com/LeNPaul/academic, following the their guide [here](https://paulle.ca/jekyll-tutorials/deploy-jekyll-site-github-pages).
+I copied this theme from [https://github.com/LeNPaul/academic](https://github.com/LeNPaul/academic), following their guide [here](https://paulle.ca/jekyll-tutorials/deploy-jekyll-site-github-pages).
 
 ## License
 
